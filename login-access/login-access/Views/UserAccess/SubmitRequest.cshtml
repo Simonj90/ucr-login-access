@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "SubmitRequest";
+}
+
+@using login_access.Models
+
+
+<br>
+<br>
+
+@model UserSubmitModel
+
+@using (Html.BeginForm("SubmitRequest", "UserAccess", FormMethod.Post))
+{
+    <p>
+        Enter your name:
+        @Html.TextBoxFor(m => m.Name)
+    </p>
+    <p>
+        Why should u get access:
+        @Html.TextBoxFor(m => m.FreeText)
+    </p>
+    <p>Where u want access?</p>
+    <p>
+        CoolDB 
+        @Html.CheckBoxFor(m => m.CoolDB)
+    </p>
+    <p>
+        AwesomeDB
+        @Html.CheckBoxFor(m => m.AwesomeDB)
+    </p>
+
+    <p> @Html.DisplayTextFor(m => m.ReturnText) </p>
+
+    <input type="submit" value="SubmitRequest" />
+
+}
+
+
+

@@ -1,0 +1,72 @@
+﻿@model login_access.Models.UserSubmitModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>UserSubmitModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreeText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreeText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoolDB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoolDB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AwesomeDB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AwesomeDB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishedSubmit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishedSubmit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnText)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

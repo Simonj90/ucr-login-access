@@ -1,0 +1,66 @@
+﻿@model login_access.Models.UserSubmitModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserSubmitModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreeText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreeText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoolDB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoolDB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AwesomeDB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AwesomeDB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishedSubmit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishedSubmit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnText)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
