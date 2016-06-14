@@ -6,28 +6,22 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FreeText)
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CoolDB)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AwesomeDB)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FinishedSubmit)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReturnText)
         </th>
         <th></th>
     </tr>
@@ -37,8 +31,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
+        <th>
+            @Html.DisplayFor(modelItem => item.Email)
+        </th>
         <td>
-            @Html.DisplayFor(modelItem => item.FreeText)
+            @Html.DisplayFor(modelItem => item.Comment)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CoolDB)
@@ -47,14 +44,8 @@
             @Html.DisplayFor(modelItem => item.AwesomeDB)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FinishedSubmit)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReturnText)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Approve", "Approve", new { id=item.id }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>

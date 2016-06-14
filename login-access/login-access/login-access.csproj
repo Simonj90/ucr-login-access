@@ -210,6 +210,8 @@
     <Content Include="Views\UserSubmitModels\Details.cshtml" />
     <Content Include="Views\UserSubmitModels\Edit.cshtml" />
     <Content Include="Views\UserSubmitModels\Index.cshtml" />
+    <Content Include="Views\UserSubmitModels\Approve.cshtml" />
+    <Content Include="Views\UserSubmitModels\ApproveConfirmed.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -272,7 +274,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\UserAccess\SubmitRequest.cshtml" />
+    <Content Include="Views\UserAccess\Index.cshtml" />
     <Content Include="Views\UserAccess\Submitted.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />

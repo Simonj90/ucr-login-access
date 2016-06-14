@@ -1,13 +1,12 @@
 ﻿@model login_access.Models.UserSubmitModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Approve";
 }
 
-<h2>Details</h2>
+<h2>Approve a user request</h2>
 
 <div>
-    <h4>UserSubmitModel</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -51,8 +50,16 @@
         </dd>
 
     </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Approve" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

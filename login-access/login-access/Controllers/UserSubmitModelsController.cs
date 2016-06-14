@@ -46,7 +46,7 @@ namespace login_access.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,Name,FreeText,CoolDB,AwesomeDB,FinishedSubmit,ReturnText")] UserSubmitModel userSubmitModel)
+        public ActionResult Create([Bind(Include = "id,Name,Email,Comment,CoolDB,AwesomeDB")] UserSubmitModel userSubmitModel)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace login_access.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,Name,FreeText,CoolDB,AwesomeDB,FinishedSubmit,ReturnText")] UserSubmitModel userSubmitModel)
+        public ActionResult Edit([Bind(Include = "id,Name,Email,Comment,CoolDB,AwesomeDB")] UserSubmitModel userSubmitModel)
         {
             if (ModelState.IsValid)
             {
@@ -113,6 +113,35 @@ namespace login_access.Controllers
             db.UserSubmits.Remove(userSubmitModel);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // GET: UserSubmitModels/Approve/5
+        public ActionResult Approve(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            UserSubmitModel userSubmitModel = db.UserSubmits.Find(id);
+            if (userSubmitModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(userSubmitModel);
+        }
+
+        // POST: UserSubmitModels/Delete/5
+        [HttpPost, ActionName("Approve")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ApproveConfirmed(int id)
+        {
+            UserSubmitModel userSubmitModel = db.UserSubmits.Find(id);
+            
+            // Access to Azure AD, send email?!?
+
+            db.UserSubmits.Remove(userSubmitModel);
+            db.SaveChanges();
+            return View(@"ApproveConfirmed", userSubmitModel);
         }
 
         protected override void Dispose(bool disposing)

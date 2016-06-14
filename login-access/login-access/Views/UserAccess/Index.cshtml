@@ -1,0 +1,44 @@
+﻿@model UserSubmitModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using login_access.Models
+<br>
+<br>
+
+@using (Html.BeginForm("SubmitRequest", "UserAccess", FormMethod.Post))
+{
+    <div>
+        @Html.Label("Enter name: ") <br />
+        @Html.TextBoxFor(m => m.Name, new { @class = "text", required = "required"})
+        @Html.ValidationMessageFor(m => m.Name)
+    </div><br />
+    <div>
+        @Html.Label("Enter email:") <br />
+        @Html.TextBoxFor(m => m.Email, new { @class = "text", @type = "email", required = "required"} )
+        @Html.ValidationMessageFor(m => m.Email)
+    </div><br />
+    <div>
+        @Html.Label("Why should you get access to these databases: ")<br />
+        @Html.TextBoxFor(m => m.Comment, new { @class = "text", required = "required" })
+        @Html.ValidationMessageFor(m => m.Comment)
+    </div><br />
+    <div>
+        @Html.Label("Check the databases you want access to: ")<br>
+        <div>
+            <p>CoolDB @Html.CheckBoxFor(m => m.CoolDB)</p>
+        </div>
+        <div>
+            <p>AwesomeDB @Html.CheckBoxFor(m => m.AwesomeDB)</p>
+        </div>
+    </div>
+
+    <input type="submit" value="Request access" />
+}
+
+@ViewBag.ReturnMessage
+
+
+

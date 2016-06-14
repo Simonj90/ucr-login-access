@@ -1,0 +1,22 @@
+﻿@model login_access.Models.UserSubmitModel
+
+@{
+    ViewBag.Title = "ApproveConfirmed";
+}
+
+<h2>Approve Confirmed</h2>
+
+<div>
+    <p><b>@Html.DisplayFor(model => model.Name)</b> should now have access</p>
+</div>
+
+
+<p>This should send a request to get Azure AD access!</p>
+
+@Html.ActionLink("Back to List", "Index")
+
+
+
+
+
+
