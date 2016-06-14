@@ -11,7 +11,6 @@ namespace login_access.Models
         public string Email { get; set; }
         public string Comment { get; set; }
         public bool CoolDB { get; set; }
-        [Required]
         public bool AwesomeDB { get; set; }
     }
 
