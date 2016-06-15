@@ -7,6 +7,7 @@ using login_access.Models;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.Azure.ActiveDirectory.GraphClient;
+using System.Data.Services.Client;
 
 namespace login_access.Controllers
 {
@@ -167,7 +168,16 @@ namespace login_access.Controllers
                 }
              };
 
-            await adClient.Users.AddUserAsync(userToBeAdded);
+
+            try
+            {
+                await adClient.Users.AddUserAsync(userToBeAdded);
+            }
+            catch (DataServiceRequestException f)
+            {
+                return View(@"UserError");
+            }
+
 
             //Delete from localDB
             db.UserSubmits.Remove(userSubmitModel);

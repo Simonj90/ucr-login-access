@@ -240,6 +240,7 @@
     <Content Include="Views\UserSubmitModels\Index.cshtml" />
     <Content Include="Views\UserSubmitModels\Approve.cshtml" />
     <Content Include="Views\UserSubmitModels\ApproveConfirmed.cshtml" />
+    <Content Include="Views\UserSubmitModels\UserError.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
