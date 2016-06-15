@@ -17,13 +17,6 @@ namespace login_access.Controllers
         [HttpPost, ActionName("SubmitRequest")]
         public ActionResult Index(UserSubmitModel model)
         {
-            /*if (emptyFieldsExist(model))
-            {
-                return View(@"Index");
-
-            }*/
-
-
             using (var db = new UserSubmitDBContext())
             {
                 if (ModelState.IsValid)
@@ -34,22 +27,6 @@ namespace login_access.Controllers
                 }
             }
             return View(@"Index");
-        }
-
-
-        private bool emptyFieldsExist(UserSubmitModel model)
-        {
-            if (model.Name == null)
-            {
-                ViewBag.ReturnMessage = "Name field Empty";
-                return true;
-            }
-            else if (model.Comment == null)
-            {
-                ViewBag.ReturnMessage = "Comment field Empty";
-                return true;
-            }
-            return false;
         }
     }
 }
